@@ -7,6 +7,123 @@
 
     <style>
 
+        /* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url('bgimage2.jpg');
+}
+
+/* Fixed Header with Border & Shadow */
+.header-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+/* Navbar Layout: 3 Equal Columns */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70px;
+  padding: 0 24px;
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Creates 3 perfectly equal columns */
+  align-items: center;
+}
+
+/* Common Section Rules */
+.nav-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Align left content to the left */
+.nav-left {
+  justify-content: flex-start;
+}
+
+/* Align middle links dead center */
+.nav-center {
+  justify-content: center;
+}
+
+/* Align right buttons to the far right */
+.nav-right {
+  justify-content: flex-end;
+  gap: 12px; /* Spacing between Login and Signup buttons */
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+}
+
+/* Links List */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px; /* Equal spacing between each individual link */
+}
+
+/* Link Styling */
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #4b5563;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #2563eb;
+  background-color: #eff6ff;
+}
+
+/* Buttons Styling */
+.btn {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary {
+  color: #374151;
+  border: 1px solid #d1d5db;
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #f3f4f6;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+
+   </style>
 
 
 
@@ -15,30 +132,38 @@
 
 
 
-
-
-
-
-
-
-    </style>
 
 </head>
+
 <body>
 
-    <div class  = "container">
-     <nav>
-        <div class = "heading">
-        <ul>
-            <a href = "TopPlaylist.html" target="_self">Top Playlist </a>
-            <a href = "Charts.html" target="_self"> Charts</a>
-            <a href  = "New Realeases.html" target="_self"> New Realeases</a>
-            <a href = "Shows & Podcasts.html" target="_self" >Shows & Podcasts</a>
-            <a href = "Radio.html" target="_self" >Radio </a>
-            <a href ="Channels.html" target="_self" >Channels</a>
-        </ul>        
+
+
+        <header class="header-container">
+  <nav class="navbar">
+    <!-- Left Section: Logo -->
+    <div class="nav-section nav-left">
+      <a href="#" class="logo">BrandLogo</a>
     </div>
-     </nav>
+
+    <!-- Center Section: Navigation Links -->
+    <div class="nav-section nav-center">
+      <ul class="nav-links">
+        <li><a href="TopPlaylist.html" target="_blank" class="active">Playlists</a></li>
+        <li><a href="Charts.html" target="_blank">Charts</a></li>
+        <li><a href="Pricing.html" target="_blank">Pricing</a></li>
+        <li><a href="About.html" target="_blank">About</a></li>
+      </ul>
+    </div>
+
+    <!-- Right Section: Login & Signup -->
+    <div class="nav-section nav-right">
+      <a href="#login" class="btn btn-secondary">Log In</a>
+      <a href="#signup" class="btn btn-primary">Sign Up</a>
+    </div>
+  </nav>
+</header>
+   
 
 
 
@@ -53,8 +178,4 @@
 
 
 
-
-
-    
 </body>
-</html>
