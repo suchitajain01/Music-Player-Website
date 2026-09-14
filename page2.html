@@ -11,7 +11,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+
   background-image: url('bgimage2.jpg');
 }
 
@@ -21,8 +21,8 @@
   top: 0;
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 2px solid #e5e7eb;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+ 
+  
   z-index: 1000;
 }
 
@@ -33,9 +33,10 @@
   height: 70px;
   padding: 0 24px;
   
-  display: grid;
+  display: flex;
   grid-template-columns: 1fr 1fr 1fr; /* Creates 3 perfectly equal columns */
   align-items: center;
+  width: 100%;
 }
 
 /* Common Section Rules */
@@ -63,16 +64,20 @@
 /* Logo Styling */
 .logo {
   font-size: 1.25rem;
-  font-weight: 700;
-  color: #111827;
+  font-weight: 500;
   text-decoration: none;
+  gap: 10px;
+  margin-right: 70px;
 }
 
 /* Links List */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 24px; /* Equal spacing between each individual link */
+  gap: 45px;
+  border: 1px solid rgb(176, 189, 189);
+  border-radius: 8px;       /* Rounded corners for the container */
+  padding: 15px 15px; /* Equal spacing between each individual link */
 }
 
 /* Link Styling */
@@ -80,10 +85,9 @@
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
-  color: #4b5563;
   padding: 8px 12px;
-  border-radius: 6px;
   transition: all 0.2s ease;
+  padding: 6px 12px;
 }
 
 .nav-links a:hover,
@@ -95,11 +99,12 @@
 /* Buttons Styling */
 .btn {
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.9rem;  
   font-weight: 600;
   padding: 8px 18px;
   border-radius: 6px;
   transition: all 0.2s ease;
+  margin-right: auto;
 }
 
 .btn-secondary {
@@ -122,6 +127,24 @@
   background-color: #1d4ed8;
 }
 
+.profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.nav-section-nav-right
+{
+
+margin-left: auto; /* Automatically pushes this element to the far right */
+  display: flex;
+  gap: 10px; /* Adds space between Log In and Sign Up buttons */
+
+}
 
    </style>
 
@@ -151,13 +174,19 @@
       <ul class="nav-links">
         <li><a href="TopPlaylist.html" target="_blank" class="active">Playlists</a></li>
         <li><a href="Charts.html" target="_blank">Charts</a></li>
-        <li><a href="Pricing.html" target="_blank">Pricing</a></li>
-        <li><a href="About.html" target="_blank">About</a></li>
+        <li><a href="New Releases.html" target="_blank">New Realeses </a></li>
+        <li><a href=" " target="_blank">Live Shows</a></li>
+        <li><a href="" target="_blank" class="active">Discover</a></li>
+        
       </ul>
     </div>
 
+    <a href="profile.html" class="profile">
+        <i class="fa-solid fa-user"></i>
+    </a>
+
     <!-- Right Section: Login & Signup -->
-    <div class="nav-section nav-right">
+    <div class="nav-section-nav-right">
       <a href="#login" class="btn btn-secondary">Log In</a>
       <a href="#signup" class="btn btn-primary">Sign Up</a>
     </div>
