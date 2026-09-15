@@ -8,9 +8,20 @@
     <style>
 
         /* Reset defaults */
-* {
-  margin: 0;
-  padding: 0;
+
+  body {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    /* Enable scrolling */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    margin: 0;
+    min-height: 100vh;
+
 
   background-image: url('bgimage2.jpg');
 }
@@ -20,9 +31,8 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #ffffff;
  
-  
+ 
   z-index: 1000;
 }
 
@@ -92,7 +102,7 @@
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #2563eb;
+  color: #ce488d;
   background-color: #eff6ff;
 }
 
@@ -108,7 +118,7 @@
 }
 
 .btn-secondary {
-  color: #374151;
+  color: #a8abb0;
   border: 1px solid #d1d5db;
   background-color: transparent;
 }
@@ -119,23 +129,15 @@
 
 .btn-primary {
   color: #ffffff;
-  background-color: #2563eb;
-  border: 1px solid #2563eb;
+  background-color: #8b95aa;
+  border: 1px solid #a8b0c2;
 }
 
 .btn-primary:hover {
-  background-color: #1d4ed8;
+  background-color: #bcbec3;
 }
 
-.profile {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #eee;
-    display: flex;
-    margin-left: auto;
-    cursor: pointer;
-}
+
 
 .nav-section-nav-right
 {
@@ -160,6 +162,8 @@ margin-left: auto; /* Automatically pushes this element to the far right */
 
 <body>
 
+  
+
 
 
         <header class="header-container">
@@ -181,9 +185,15 @@ margin-left: auto; /* Automatically pushes this element to the far right */
       </ul>
     </div>
 
-    <a href="profile.html" class="profile">
-        <i class="fa-solid fa-user"></i>
+    
+    
+
+</main>
+<div class="profile">
+    <a href="profile.html">
+        <img src="profile.png" alt="Profile">
     </a>
+</div>
 
     <!-- Right Section: Login & Signup -->
     <div class="nav-section-nav-right">

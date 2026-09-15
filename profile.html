@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    /* ==========================
+   PROFILE BUTTON
+========================== */
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-btn {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+
+    border: 2px solid #4ddfff;
+
+    background: rgba(0, 30, 40, 0.6);
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s;
+}
+
+.profile-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(77, 223, 255, 0.4);
+}
+
+.profile-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* ==========================
+   OVERLAY
+========================== */
+
+.profile-overlay {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+
+.profile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.profile-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: 390px;
+    height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: 25px;
+
+    background: rgba(3, 24, 34, 0.98);
+
+    backdrop-filter: blur(18px);
+
+    border-left: 1px solid rgba(77, 223, 255, 0.35);
+
+    color: white;
+
+    overflow-y: auto;
+
+    transform: translateX(100%);
+
+    transition: transform 0.35s ease;
+
+    z-index: 1000;
+}
+
+.profile-sidebar.active {
+    transform: translateX(0);
+}
+
+
+/* ==========================
+   SIDEBAR HEADER
+========================== */
+
+.sidebar-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-top h2 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+.close-btn {
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================
+   PROFILE INFORMATION
+========================== */
+
+.sidebar-profile {
+
+    text-align: center;
+
+    padding: 28px 0;
+}
+
+.sidebar-profile-pic {
+
+    width: 90px;
+    height: 90px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    border: 2px solid #4ddfff;
+
+    overflow: hidden;
+}
+
+.sidebar-profile-pic img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.sidebar-profile h2 {
+
+    margin: 13px 0 4px;
+
+    font-size: 21px;
+}
+
+.sidebar-profile p {
+
+    margin: 0;
+
+    color: #8eabb2;
+
+    font-size: 14px;
+}
+
+
+/* ==========================
+   EDIT PROFILE
+========================== */
+
+.edit-profile-btn {
+
+    margin-top: 15px;
+
+    padding: 9px 22px;
+
+    border-radius: 20px;
+
+    border: 1px solid #4ddfff;
+
+    background: transparent;
+
+    color: #4ddfff;
+
+    cursor: pointer;
+}
+
+.edit-profile-btn:hover {
+
+    background: #4ddfff;
+
+    color: #00232c;
+}
+
+
+/* ==========================
+   FOLLOWERS / FOLLOWING
+========================== */
+
+.profile-stats {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    padding: 18px 0;
+
+    margin-bottom: 22px;
+}
+
+.stat {
+
+    text-align: center;
+
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat strong {
+
+    display: block;
+
+    font-size: 19px;
+
+    color: #ffffff;
+}
+
+.stat span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #8eaeb5;
+
+    font-size: 12px;
+}
+
+
+/* ==========================
+   MENU
+========================== */
+
+.profile-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.profile-menu-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 13px 10px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.profile-menu-item:hover {
+
+    background: rgba(77, 223, 255, 0.09);
+}
+
+.menu-icon {
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(77, 223, 255, 0.1);
+
+    color: #4ddfff;
+
+    font-size: 18px;
+}
+
+.profile-menu-item h4 {
+
+    margin: 0 0 3px;
+
+    font-size: 14px;
+}
+
+.profile-menu-item p {
+
+    margin: 0;
+
+    color: #809ba2;
+
+    font-size: 11px;
+}
+
+.arrow {
+
+    margin-left: auto;
+
+    color: #66868e;
+
+    font-size: 22px;
+}
+
+
+/* ==========================
+   SETTINGS
+========================== */
+
+.settings-section {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.settings-section h3 {
+
+    margin: 0 10px 10px;
+
+    color: #4ddfff;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==========================
+   LOGOUT
+========================== */
+
+.logout-btn {
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 13px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,100,100,0.3);
+
+    background: rgba(255,70,70,0.08);
+
+    color: #ff7777;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+
+    background: rgba(255,70,70,0.15);
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 500px) {
+
+    .profile-sidebar {
+
+        width: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+<body>
+<!-- PROFILE SIDEBAR -->
+
+<!-- PROFILE SIDEBAR -->
+
+<div class="profile-overlay" id="profileOverlay"
+     onclick="closeProfileSidebar()"></div>
+
+<aside class="profile-sidebar" id="profileSidebar">
+
+    <!-- Header -->
+    <div class="sidebar-top">
+
+        <h2>My Profile</h2>
+
+        <button class="close-btn" onclick="closeProfileSidebar()">
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- Profile -->
+    <div class="sidebar-profile">
+
+        <div class="sidebar-profile-pic">
+            <img src="profile.jpg" alt="Profile">
+        </div>
+
+        <h2>Suchita Jain</h2>
+
+        <p>@suchitajain</p>
+
+        <button class="edit-profile-btn">
+            Edit Profile
+        </button>
+
+    </div>
+
+
+    <!-- Followers / Following -->
+
+    <div class="profile-stats">
+
+        <div class="stat">
+            <strong>248</strong>
+            <span>Followers</span>
+        </div>
+
+        <div class="stat">
+            <strong>186</strong>
+            <span>Following</span>
+        </div>
+
+        <div class="stat">
+            <strong>12</strong>
+            <span>Playlists</span>
+        </div>
+
+    </div>
+
+
+    <!-- Menu -->
+
+    <div class="profile-menu">
+
+        <div class="profile-menu-item">
+            <div class="menu-icon">♫</div>
+
+            <div>
+                <h4>My Playlists</h4>
+                <p>View and manage your playlists</p>
+            </div>
+
+            <span class="arrow">›</span>
+        </div>
+
+
+        <div class="profile-menu-item">
+            <div class="menu-icon">♡</div>
+
+            <div>
+                <h4>Liked Songs</h4>
+                <p>Your favourite songs</p>
+            </div>
+
+            <span class="arrow">›</span>
+        </div>
+
+
+        <div class="profile-menu-item">
+            <div class="menu-icon">◷</div>
+
+            <div>
+                <h4>Recently Played</h4>
+                <p>Your listening history</p>
+            </div>
+
+            <span class="arrow">›</span>
+        </div>
+
+
+        <div class="profile-menu-item">
+            <div class="menu-icon">👥</div>
+
+            <div>
+                <h4>Followers & Following</h4>
+                <p>Manage your connections</p>
+            </div>
+
+            <span class="arrow">›</span>
+        </div>
+
+    </div>
+
+
+    <!-- Settings -->
+
+    <div class="settings-section">
+
+        <h3>Personal Settings</h3>
+
+        <div class="profile-menu-item">
+
+            <div class="menu-icon">⚙</div>
+
+            <div>
+                <h4>Settings</h4>
+                <p>Personalize your experience</p>
+            </div>
+
+            <span class="arrow">›</span>
+
+        </div>
+
+
+        <div class="profile-menu-item">
+
+            <div class="menu-icon">🔔</div>
+
+            <div>
+                <h4>Notifications</h4>
+                <p>Manage your notifications</p>
+            </div>
+
+            <span class="arrow">›</span>
+
+        </div>
+
+
+        <div class="profile-menu-item">
+
+            <div class="menu-icon">🔒</div>
+
+            <div>
+                <h4>Privacy</h4>
+                <p>Control your privacy</p>
+            </div>
+
+            <span class="arrow">›</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Logout -->
+
+    <button class="logout-btn">
+        ↪ &nbsp; Log Out
+    </button>
+
+</aside>
