@@ -1,0 +1,101 @@
+body
+{
+   
+  background-image: url('bgimage2.jpg');
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color:rgb(32, 33, 53);
+
+
+
+
+
+
+
+    background-color: rgb(31, 29, 50);
+    width: 100%;
+    height: 900px;
+
+}
+
+.btn
+{
+
+  display: inline-block;
+  cursor:pointer;
+  padding: 10px 40px;
+  text-decoration: none;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+h1
+{
+
+    color:white;
+
+
+
+}
+
+p{
+    color:white;
+}
+
+
+ul
+{
+    display:flex;
+    gap: 170px;
+
+}
+
+
+
+a{
+    color: rgb(225, 226, 230);
+    text-decoration: none;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
+a:hover
+{
+    background-color: rgb(94, 115, 115);
+    border-radius: 20px;
+    height:25px;
+    
+    
+}
+
+
+.icons
+{
+ display:flex;
+flex-direction: column;
+gap: 60px;
+
+
+}
+
+img
+{
+ width:50px;
+
+}
+
+.icons i {
+    cursor: pointer;
+    font-size: 25px;
+    margin: 15px;
+}
+

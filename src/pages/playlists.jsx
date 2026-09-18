@@ -64,6 +64,7 @@ const playlists = [
 ];
 
 function TopPlaylists() {
+
   return (
     <section className="min-h-screen bg-[url('/bgimage2.jpg')] bg-cover bg-center bg-fixed px-8 py-10">
 

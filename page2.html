@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        /* Reset defaults */
+
+  body {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    /* Enable scrolling */
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    margin: 0;
+    min-height: 100vh;
+
+
+  background-image: url('bgimage2.jpg');
+}
+
+/* Fixed Header with Border & Shadow */
+.header-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+ 
+ 
+  z-index: 1000;
+}
+
+/* Navbar Layout: 3 Equal Columns */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70px;
+  padding: 0 24px;
+  
+  display: flex;
+  grid-template-columns: 1fr 1fr 1fr; /* Creates 3 perfectly equal columns */
+  align-items: center;
+  width: 100%;
+}
+
+/* Common Section Rules */
+.nav-section {
+  display: flex;
+  align-items: center;
+}
+
+/* Align left content to the left */
+.nav-left {
+  justify-content: flex-start;
+}
+
+/* Align middle links dead center */
+.nav-center {
+  justify-content: center;
+}
+
+/* Align right buttons to the far right */
+.nav-right {
+  justify-content: flex-end;
+  gap: 12px; /* Spacing between Login and Signup buttons */
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  gap: 10px;
+  margin-right: 70px;
+}
+
+/* Links List */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 45px;
+  border: 1px solid rgb(176, 189, 189);
+  border-radius: 8px;       /* Rounded corners for the container */
+  padding: 15px 15px; /* Equal spacing between each individual link */
+}
+
+/* Link Styling */
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+  padding: 6px 12px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ce488d;
+  background-color: #eff6ff;
+}
+
+/* Buttons Styling */
+.btn {
+  text-decoration: none;
+  font-size: 0.9rem;  
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  margin-right: auto;
+}
+
+.btn-secondary {
+  color: #a8abb0;
+  border: 1px solid #d1d5db;
+  background-color: transparent;
+}
+
+.btn-secondary:hover {
+  background-color: #f3f4f6;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #8b95aa;
+  border: 1px solid #a8b0c2;
+}
+
+.btn-primary:hover {
+  background-color: #bcbec3;
+}
+
+
+
+.nav-section-nav-right
+{
+
+margin-left: auto; /* Automatically pushes this element to the far right */
+  display: flex;
+  gap: 10px; /* Adds space between Log In and Sign Up buttons */
+
+}
+
+   </style>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+  
+
+
+
+        <header class="header-container">
+  <nav class="navbar">
+    <!-- Left Section: Logo -->
+    <div class="nav-section nav-left">
+      <a href="#" class="logo">BrandLogo</a>
+    </div>
+
+    <!-- Center Section: Navigation Links -->
+    <div class="nav-section nav-center">
+      <ul class="nav-links">
+        <li><a href="TopPlaylist.html" target="_blank" class="active">Playlists</a></li>
+        <li><a href="Charts.html" target="_blank">Charts</a></li>
+        <li><a href="New Releases.html" target="_blank">New Realeses </a></li>
+        <li><a href=" " target="_blank">Live Shows</a></li>
+        <li><a href="" target="_blank" class="active">Discover</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+
+</main>
+<div class="profile">
+    <a href="profile.html">
+        <img src="profile.png" alt="Profile">
+    </a>
+</div>
+
+    <!-- Right Section: Login & Signup -->
+    <div class="nav-section-nav-right">
+      <a href="#login" class="btn btn-secondary">Log In</a>
+      <a href="#signup" class="btn btn-primary">Sign Up</a>
+    </div>
+  </nav>
+</header>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

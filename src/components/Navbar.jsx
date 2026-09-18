@@ -19,7 +19,7 @@ function Navbar() {
 
             <li>
               <a
-                href="#"
+                href="/playlists"
                 className="rounded-md bg-[#eff6ff] px-3 py-1.5 text-[0.95rem] font-medium text-[#ce488d]"
               >
                 Playlists
@@ -28,7 +28,7 @@ function Navbar() {
 
             <li>
               <a
-                href="#"
+                href="/charts"
                 className="px-3 py-1.5 text-[0.95rem] font-medium hover:rounded-md hover:bg-[#eff6ff] hover:text-[#ce488d]"
               >
                 Charts
