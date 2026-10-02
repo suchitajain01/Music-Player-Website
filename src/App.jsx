@@ -16,6 +16,8 @@ function App() {
         {/* Home page */}
         <Route path="/home" element={<Home />} />
 
+         
+
         <Route path = "/playlists" element = {<TopPlaylists/>}
         />
         <Route path = "/charts" element = {<Charts/>}
