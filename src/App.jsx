@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Charts from "./pages/charts"
 import FrontPage from "./pages/FrontPage"
 import Home from "./pages/home"
-import TopPlaylists from "./pages/playlists"
+
 
 
 function App() {
@@ -17,11 +16,6 @@ function App() {
         <Route path="/home" element={<Home />} />
 
          
-
-        <Route path = "/playlists" element = {<TopPlaylists/>}
-        />
-        <Route path = "/charts" element = {<Charts/>}
-        />
 
       </Routes>
     </BrowserRouter>

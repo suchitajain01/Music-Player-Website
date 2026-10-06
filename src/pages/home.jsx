@@ -1,8 +1,8 @@
-import Navbar from "../components/navbar"
-import { Link } from "react-router-dom"
+
+import Navbar from "../components/navbar";
+import { Link } from "react-router-dom";
 
 function Home() {
-
   const songs = [
     ["song1.jpg", "Dracula", "Tame Impala"],
     ["song2.jpg", "Die With A Smile", "Lady Gaga, Bruno Mars"],
@@ -24,7 +24,7 @@ function Home() {
     ["music18.jpg", "Bairan", "Tame Impala"],
     ["music19.jpg", "Naal Nachna", "Banjaare"],
     ["music20.jpg", "DTMF", "Bad Bunny"],
-  ]
+  ];
 
   const artists = [
     ["artist1.jpg", "Lana Del Rey"],
@@ -40,15 +40,15 @@ function Home() {
     ["artist11.jpg", "Cigarettes After Sex"],
     ["artist12.jpg", "Ed Sheeran"],
     ["artist13.jpg", "Rauf & Faik"],
-  ]
+  ];
 
   return (
     <div className="min-h-screen bg-[#0b111e] text-white">
 
       <Navbar />
 
+      {/* ================= WELCOME ================= */}
       <main className="px-6 py-10">
-
         <h1 className="text-4xl font-bold">
           Welcome to the Music App
         </h1>
@@ -56,76 +56,56 @@ function Home() {
         <p className="mt-4 text-gray-400">
           Discover your favorite music, playlists and artists.
         </p>
-
       </main>
 
       {/* ================= FAVORITE ARTISTS ================= */}
+<section className="mt-14 px-6">
+  <h2 className="mb-6 text-2xl font-semibold">
+    Favorite Artists
+  </h2>
 
-      <section className="mt-14 px-6">
+  <div className="flex gap-8 overflow-x-auto pb-5 scrollbar-hide">
+    {artists.map((artist, index) => (
+      <a
+        href="#"
+        key={index}
+        className="min-w-[150px] text-center transition duration-200 hover:scale-105"
+      >
+        <img
+          src={`/images/artists/${artist[0]}`}
+          alt={artist[1]}
+          className="h-[150px] w-[150px] rounded-full object-cover"
+        />
 
-        <h2 className="mb-6 text-2xl font-semibold">
-          Favorite Artists
-        </h2>
-
-        <div className="flex gap-8 overflow-x-auto pb-5 scrollbar-hide">
-
-          {artists.map((artist, index) => (
-            <a
-              href="#"
-              key={index}
-              className="min-w-[150px] text-center transition duration-200 hover:scale-105"
-            >
-
-              <img
-                src={`/images/artists/${artist[0]}`}
-                alt={artist[1]}
-                className="h-[150px] w-[150px] rounded-full object-cover"
-              />
-
-              <p className="mt-3 font-medium">
-                {artist[1]}
-              </p>
-
-            </a>
-          ))}
-
-        </div>
-
-      </section>
-
-      {/* ================= GLOBAL TOP 20 ================= */}
+        <p className="mt-3 font-medium">
+          {artist[1]}
+        </p>
+      </a>
+    ))}
+  </div>
+</section>
 
 
-      <section className="mt-14 px-6">
-
+    
+      {/* ================= PLAYLISTS ================= */}
+      <section className="mt-14 px-6 pb-10">
         <h2 className="mb-6 text-2xl font-semibold">
           Playlists
         </h2>
 
-        <div className="flex gap-6">
+        <div className="flex gap-6 overflow-x-auto pb-5 scrollbar-hide">
 
+          {/* GLOBAL TOP 20 */}
           <Link
             to="/global-top-20"
-            className="group block w-[220px]"
+            className="group block min-w-[220px] w-[220px]"
           >
-
-            {/* Folder image */}
             <div className="flex h-[200px] flex-col justify-end rounded-xl bg-gradient-to-br from-pink-500/40 to-orange-500/40 p-5 transition duration-300 group-hover:scale-105">
-
               <div className="flex h-full items-end">
-
-                <div>
-                  <p className="text-sm text-gray-300">
-
-                  </p>
-
-                  <h3 className="mt-1 text-2xl font-bold">
-                    Global Top 20
-                  </h3>
-                </div>
-
+                <h3 className="text-2xl font-bold">
+                  Global Top 20
+                </h3>
               </div>
-
             </div>
 
             <p className="mt-3 font-medium">
@@ -135,33 +115,19 @@ function Home() {
             <p className="text-sm text-gray-400">
               Top songs worldwide
             </p>
-
           </Link>
 
-
-
+          {/* LIKED SONGS */}
           <Link
             to="/likedSongs"
-            className="group block w-[220px]"
+            className="group block min-w-[220px] w-[220px]"
           >
-
-            {/* Folder image */}
             <div className="flex h-[200px] flex-col justify-end rounded-xl bg-gradient-to-br from-pink-500/40 to-orange-500/40 p-5 transition duration-300 group-hover:scale-105">
-
               <div className="flex h-full items-end">
-
-                <div>
-                  <p className="text-sm text-gray-300">
-
-                  </p>
-
-                  <h3 className="mt-1 text-2xl font-bold">
-                    Liked Songs
-                  </h3>
-                </div>
-
+                <h3 className="text-2xl font-bold">
+                  Liked Songs
+                </h3>
               </div>
-
             </div>
 
             <p className="mt-3 font-medium">
@@ -171,48 +137,35 @@ function Home() {
             <p className="text-sm text-gray-400">
               Your favorite tracks
             </p>
-
           </Link>
 
-
-
+          {/* MOST LISTENED SONGS */}
           <Link
-            to="/likedSongs.jsx"
-            className="group block w-[220px]"
+            to="/most-listened"
+            className="group block min-w-[220px] w-[220px]"
           >
-
-            {/* Folder image */}
             <div className="flex h-[200px] flex-col justify-end rounded-xl bg-gradient-to-br from-pink-500/40 to-orange-500/40 p-5 transition duration-300 group-hover:scale-105">
-
               <div className="flex h-full items-end">
-
-                <div>
-                  <p className="text-sm text-gray-300">
-
-                  </p>
-
-                  <h3 className="mt-1 text-2xl font-bold">
-                    Most Listened Songs
-                  </h3>
-                </div>
-
+                <h3 className="text-2xl font-bold">
+                  Most Listened Songs
+                </h3>
               </div>
-
             </div>
 
             <p className="mt-3 font-medium">
-
+              Most Listened
             </p>
 
             <p className="text-sm text-gray-400">
-
+              Songs you listen to the most
             </p>
-
           </Link>
-</div>
- </section>
-  </div>
-  )
+
+        </div>
+      </section>
+
+    </div>
+  );
 }
 
-export default Home
+export default Home;

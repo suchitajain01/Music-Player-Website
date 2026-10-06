@@ -22,54 +22,41 @@ function Navbar() {
           </div>
 
 
+
           {/* Navigation Links */}
           <div className="flex items-center justify-center">
             <ul className="flex list-none gap-[45px] rounded-lg border border-[rgb(176,189,189)] px-[15px] py-[15px]">
 
+              {/* Home */}
               <li>
                 <Link
-                  to="/playlists"
-                  className="rounded-md bg-[#eff6ff] px-3 py-1.5 text-[0.95rem] font-medium text-[#ce488d]"
+                  to="/home"
+                  title="Home"
+                  className="flex items-center justify-center rounded-md bg-[#eff6ff] px-3 py-1.5 text-xl text-[#ce488d] transition duration-200 hover:scale-110"
                 >
-                  Playlists
+                  <i className="fa-solid fa-house"></i>
                 </Link>
               </li>
+              <li>
+      <Link
+        to="/search"
+        title="Search"
+        className="flex items-center justify-center px-3 py-1.5 text-xl text-white transition duration-200 hover:scale-110 hover:text-[#ce488d]"
+      >
+        <i className="fa-solid fa-magnifying-glass"></i>
+      </Link>
+    </li>
 
-              <li>
-                <Link
-                  to="/charts"
-                  className="px-3 py-1.5 text-[0.95rem] font-medium hover:rounded-md hover:bg-[#eff6ff] hover:text-[#ce488d]"
-                >
-                  Charts
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/new-releases"
-                  className="whitespace-nowrap px-3 py-1.5 text-[0.95rem] font-medium hover:rounded-md hover:bg-[#eff6ff] hover:text-[#ce488d]"
-                >
-                  New Releases
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/live-shows"
-                  className="whitespace-nowrap px-3 py-1.5 text-[0.95rem] font-medium hover:rounded-md hover:bg-[#eff6ff] hover:text-[#ce488d]"
-                >
-                  Live Shows
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/discover"
-                  className="px-3 py-1.5 text-[0.95rem] font-medium hover:rounded-md hover:bg-[#eff6ff] hover:text-[#ce488d]"
-                >
-                  Discover
-                </Link>
-              </li>
+    {/* Library */}
+    <li>
+      <Link
+        to="/library"
+        title="Library"
+        className="flex items-center justify-center px-3 py-1.5 text-xl text-white transition duration-200 hover:scale-110 hover:text-[#ce488d]"
+      >
+        <i className="fa-solid fa-book"></i>
+      </Link>
+    </li> 
 
             </ul>
           </div>
@@ -175,7 +162,7 @@ function Navbar() {
             <button
               className="block w-full text-left hover:text-cyan-400"
             >
-             Updates
+              Updates
             </button>
 
 
